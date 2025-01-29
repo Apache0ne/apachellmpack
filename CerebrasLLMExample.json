@@ -1,0 +1,230 @@
+{
+  "last_node_id": 5,
+  "last_link_id": 4,
+  "nodes": [
+    {
+      "id": 4,
+      "type": "cerebrasLLMNODE",
+      "pos": [
+        821.393798828125,
+        501.51434326171875
+      ],
+      "size": [
+        400,
+        426
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "api_response",
+          "type": "STRING",
+          "links": [
+            1
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "success",
+          "type": "BOOLEAN",
+          "links": null,
+          "slot_index": 1
+        },
+        {
+          "name": "conversation_id",
+          "type": "STRING",
+          "links": [
+            2
+          ],
+          "slot_index": 2
+        },
+        {
+          "name": "chat_history",
+          "type": "STRING",
+          "links": [
+            4
+          ],
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "cerebrasLLMNODE"
+      },
+      "widgets_values": [
+        "llama-3.3-70b",
+        "Use [system_message] and [user_input]",
+        "Scotty Doesn't Know song from Eurotrip",
+        "does scotty know?",
+        0.85,
+        1024,
+        1,
+        3152129168,
+        "randomize",
+        "",
+        false,
+        ""
+      ]
+    },
+    {
+      "id": 2,
+      "type": "ShowText|pysssss",
+      "pos": [
+        816.574951171875,
+        965.7278442382812
+      ],
+      "size": [
+        376.98345947265625,
+        85.2727279663086
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 2,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "58407add-9b56-4420-a92b-8f7a14df9035"
+      ]
+    },
+    {
+      "id": 5,
+      "type": "ShowText|pysssss",
+      "pos": [
+        1230,
+        933
+      ],
+      "size": [
+        705,
+        293.5
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 4,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 1,
+      "type": "ShowText|pysssss",
+      "pos": [
+        1233,
+        504
+      ],
+      "size": [
+        709.2520751953125,
+        374.73553466796875
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 1,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "A reference to the classic song \"Scotty Doesn't Know\" from the 2004 movie Eurotrip!\n\nFor those who might not know, the song is about a guy who's trying to keep a secret from his friend Scotty - that he's been cheating on his girlfriend, Fiona, with a girl named Penelope. The song becomes a humorous and catchy anthem throughout the movie.\n\nSo, to answer your question... NO, Scotty doesn't know!"
+      ]
+    }
+  ],
+  "links": [
+    [
+      1,
+      4,
+      0,
+      1,
+      0,
+      "STRING"
+    ],
+    [
+      2,
+      4,
+      2,
+      2,
+      0,
+      "STRING"
+    ],
+    [
+      4,
+      4,
+      3,
+      5,
+      0,
+      "STRING"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 1,
+      "offset": [
+        -355.5,
+        -129
+      ]
+    },
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0
+  },
+  "version": 0.4
+}
