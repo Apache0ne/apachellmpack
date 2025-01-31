@@ -27,3 +27,8 @@ Inside venv\Scripts\
 ```pip install groq```\
 Inside Custom_nodes Folder\
 ```git clone https://github.com/Apache0ne/apachellmpack.git```
+## known issues 
+Cerebras presets dont work\
+streaming mode doesnt work in comfy(might one day)\
+## might add 
+Cerebras thinking and planning support 
