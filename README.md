@@ -1,9 +1,11 @@
 # LLM Pack
-A pack for using the LLm models hosted by Cerebras, Groq, and SambNova
+A pack for using the LLm models hosted by Cerebras, Groq, and SambNova\
+![image](https://github.com/user-attachments/assets/9af8233b-b385-4676-92d5-9674afb63ae6)\
+this image is outdated by about 3 months, top 3 are faster now
 ## dependencies
 'groq'
 ## Installation
-API KEYS HERE(Cerebras may be still in devs only, email or reach out to their many media pages.(might hook you up with a key)): 
+API KEYS HERE(Cerebras may be still in devs only, email or reach out to their many media pages.(might hook you up with a key)): \
 https://cloud.sambanova.ai/apis \
 https://cloud.cerebras.ai/platform/org_khtphhjfktpfxvvfnwmxy8tp/apikeys \
 https://console.groq.com/keys \
