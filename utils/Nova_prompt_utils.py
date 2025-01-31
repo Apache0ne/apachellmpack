@@ -3,7 +3,6 @@ import os
 import logging
 from typing import Dict, List, Optional, Any
 
-# Set up logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
@@ -40,7 +39,6 @@ def save_prompt(prompt_file: str, prompt_name: str, prompt_content: str) -> bool
             with open(prompt_file, 'r') as file:
                 prompts = json.load(file)
         
-        # Update existing prompt or add new one
         updated = False
         for prompt in prompts:
             if prompt['name'] == prompt_name:

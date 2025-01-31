@@ -5,13 +5,13 @@ import time
 def make_api_request(data, headers, url, max_retries):
     for attempt in range(max_retries):
         response = requests.post(url, headers=headers, json=data)
-        print(f"Response status: {response.status_code}, Response body: {response.text}")
+        #print(f"Response status: {response.status_code}, Response body: {response.text}")
         if response.status_code == 200:
             try:
                 response_json = json.loads(response.text)
                 if 'choices' in response_json and response_json['choices']:
                     assistant_message = response_json['choices'][0]['message']['content']
-                    print(f"Extracted message: {assistant_message}")
+                    #print(f"Extracted message: {assistant_message}")
                     return assistant_message, True, "200 OK"
                 else:
                     return "No valid response content found.", False, "200 OK but no content"

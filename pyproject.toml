@@ -3,7 +3,7 @@ name = "apachellmpack"
 description = ""
 version = "1.0.0"
 license = {file = "LICENSE"}
-dependencies = ["requests", "pydantic", "fastapi", "sentry_sdk", "tenacity", "openai", "tiktoken", "anthropic", "gorq", "configparser"]
+dependencies = ["groq"]
 
 [project.urls]
 Repository = "https://github.com/Apache0ne/apachellmpack"

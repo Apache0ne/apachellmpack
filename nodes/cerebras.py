@@ -3,19 +3,19 @@ import json
 import random
 import numpy as np
 import torch
-import requests # Import requests for API calls - still needed in process_completion_request
+import requests 
 from colorama import init, Fore, Style
 from configparser import ConfigParser
 
 from ..utils.Cerebras_api_utils import load_prompt_options, get_prompt_content, fetch_cerebras_models
 from ..utils.Cerebras_chat_utils import ChatHistoryManager
 
-init()  # Initialize colorama
+init()  
 
 class CerebrasAPILLM:
     DEFAULT_PROMPT = "Use [system_message] and [user_input]"
 
-    _LLM_MODELS = []  # Private class-level list to store models
+    _LLM_MODELS = [] 
 
     def __init__(self):
         current_directory = os.path.dirname(os.path.realpath(__file__))
@@ -23,37 +23,32 @@ class CerebrasAPILLM:
         config_path = os.path.join(cerebras_directory, 'CerebrasConfig.ini')
         self.config = ConfigParser()
         self.config.read(config_path)
-        self.api_key = self.config.get('API', 'key') # Assuming API key is in config
+        self.api_key = self.config.get('API', 'key')
 
-        self.cerebras_api_base_url = "https://api.cerebras.ai/v1" # Base URL for Cerebras API
+        self.cerebras_api_base_url = "https://api.cerebras.ai/v1" 
 
-        # Fetch LLM models from Cerebras API during initialization and store in instance
         self.instance_llm_models = fetch_cerebras_models(self.api_key, self.cerebras_api_base_url)
         if not self.instance_llm_models:
             print(Fore.RED + "Failed to fetch Cerebras models from API. Check API key and connection." + Style.RESET_ALL)
-            self.instance_llm_models = ["error_fetching_models"] # Fallback in case of error
-        CerebrasAPILLM._LLM_MODELS = self.instance_llm_models # Update the class-level list too, for fallback maybe
+            self.instance_llm_models = ["error_fetching_models"] 
+        CerebrasAPILLM._LLM_MODELS = self.instance_llm_models 
 
-
-        # Load prompt options
         prompt_files = [
             os.path.join(cerebras_directory, 'DefaultPrompts.json'),
             os.path.join(cerebras_directory, 'UserPrompts.json')
         ]
         self.prompt_options = load_prompt_options(prompt_files)
 
-        # Initialize chat history manager
         self.chat_history_manager = ChatHistoryManager()
 
     @classmethod
-    def LLM_MODELS(cls): # Class property to access the models
-        instance = cls() # Create a temporary instance to access instance_llm_models
-        return instance.instance_llm_models # Return the instance's model list
-
+    def LLM_MODELS(cls): 
+        instance = cls() 
+        return instance.instance_llm_models 
+    
     @classmethod
     def INPUT_TYPES(cls):
-        # Use the LLM_MODELS class property to get the list for the dropdown
-        model_choices = cls.LLM_MODELS() # Call the class property as a method
+        model_choices = cls.LLM_MODELS() 
 
         try:
             current_directory = os.path.dirname(os.path.realpath(__file__))
@@ -88,16 +83,14 @@ class CerebrasAPILLM:
     RETURN_NAMES = ("api_response", "success", "conversation_id", "chat_history")
     OUTPUT_TOOLTIPS = ("The API response (generated text).", "Whether the request was successful.", "The unique identifier for the conversation.", "The complete chat history (JSON string).")
     FUNCTION = "process_completion_request"
-    CATEGORY = "⚡ MNeMiC Nodes"
+    CATEGORY = "apachellmpack"
     DESCRIPTION = "Uses Cerebras API to generate text from language models with conversation context."
 
     def process_completion_request(self, model, preset, system_message, user_input, temperature, max_tokens, top_p, seed, stop, json_mode, conversation_id):
 
-        # --- Check if model list was fetched successfully ---
-        if "error_fetching_models" in self.instance_llm_models: # Use instance list here
+        if "error_fetching_models" in self.instance_llm_models: 
             return ("Error fetching model list from Cerebras API. Cannot proceed.", False, conversation_id, "{}")
 
-        # Set the seed for reproducibility
         torch.manual_seed(seed)
         np.random.seed(seed)
         random.seed(seed)
@@ -107,29 +100,25 @@ class CerebrasAPILLM:
         else:
             system_message = get_prompt_content(self.prompt_options, preset)
 
-        # Get or create conversation history
         if not conversation_id:
             conversation_id = self.chat_history_manager.create_new_conversation()
 
         conversation_history = self.chat_history_manager.get_history(conversation_id)
 
-        # Add system message if it's a new conversation
         if not conversation_history:
             conversation_history.append({"role": "system", "content": system_message})
 
-        # Add user input to conversation history
         conversation_history.append({"role": "user", "content": user_input})
 
-        prompt_messages = conversation_history # API likely expects messages in this format
+        prompt_messages = conversation_history 
 
         try:
-            # --- Cerebras API Text Generation Request ---
-            inference_url = f"{self.cerebras_api_base_url}/chat/completions" # Placeholder -  VERIFY INFERENCE API ENDPOINT
-            headers = {'Authorization': f'Bearer {self.api_key}', 'Content-Type': 'application/json'} # Content-Type for JSON
+            inference_url = f"{self.cerebras_api_base_url}/chat/completions" 
+            headers = {'Authorization': f'Bearer {self.api_key}', 'Content-Type': 'application/json'} 
 
-            payload = { # Placeholder payload - VERIFY PAYLOAD STRUCTURE WITH CEREBRAS API DOCS
+            payload = { 
                 "model": model,
-                "messages": prompt_messages, # Use the conversation history as messages
+                "messages": prompt_messages, 
                 "temperature": temperature,
                 "max_tokens": max_tokens,
                 "top_p": top_p,
@@ -140,19 +129,16 @@ class CerebrasAPILLM:
                 # Add other API parameters as needed (e.g., top_k, presence_penalty, etc.) - CHECK API DOCS
             }
             if stop:
-                payload["stop"] = [stop] # Assuming API expects stop as a list of strings
+                payload["stop"] = [stop] 
 
-            print(f"Sending request to Cerebras API for model '{model}' with payload: {json.dumps(payload, indent=2)}")
+            #print(f"Sending request to Cerebras API for model '{model}' with payload: {json.dumps(payload, indent=2)}")
 
             response = requests.post(inference_url, headers=headers, json=payload)
-            response.raise_for_status() # Raise HTTPError for bad responses
+            response.raise_for_status() 
 
             api_response_json = response.json()
-            print(f"Cerebras API Response: {json.dumps(api_response_json, indent=2)}")
+            #print(f"Cerebras API Response: {json.dumps(api_response_json, indent=2)}")
 
-            # --- ASSUMING API RESPONSE STRUCTURE FOR COMPLETIONS ---
-            # You MUST inspect the actual JSON response to extract the generated text.
-            # Example: If response is like OpenAI's chat completions:
             if 'choices' in api_response_json and api_response_json['choices']:
                 generated_text = api_response_json['choices'][0]['message']['content']
             else:
@@ -171,15 +157,13 @@ class CerebrasAPILLM:
             success = False
         except ValueError as e:
             print(Fore.RED + f"Value Error processing API response: {e}" + Style.RESET_ALL)
-            generated_text = str(e) # Error message from ValueError
+            generated_text = str(e) 
             success = False
-        except Exception as e: # Catch any other unexpected errors
+        except Exception as e: 
             print(Fore.RED + f"Unexpected error during Cerebras API interaction: {e}" + Style.RESET_ALL)
             generated_text = f"Unexpected error: {e}"
             success = False
 
-
-        # Add assistant's response to conversation history
         if success:
             conversation_history.append({"role": "assistant", "content": generated_text})
             self.chat_history_manager.update_history(conversation_id, conversation_history)

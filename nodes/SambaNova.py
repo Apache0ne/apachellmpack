@@ -6,17 +6,21 @@ from ..utils.Nova_api_utils import make_api_request, make_streaming_request
 from ..utils.Nova_chat_utils import ChatHistoryManager
 from ..utils.Nova_prompt_utils import load_prompt_options, format_prompt
 
-# Set up logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 class SambaNovaLLMNode:
     SAMBA_NOVA_MODELS = [
+        "Qwen2.5-Coder-32B-Instruct",
+        "Qwen2.5-72B-Instruct",
+        "QwQ-32B-Preview",
+        "Meta-Llama-3.3-70B-Instruct",
+        "Meta-Llama-3.2-1B-Instruct",
+        "Meta-Llama-3.2-3B-Instruct",
         "Meta-Llama-3.1-8B-Instruct",
         "Meta-Llama-3.1-70B-Instruct",
         "Meta-Llama-3.1-405B-Instruct",
-        "Meta-Llama-3.2-1B-Instruct",
-        "Meta-Llama-3.2-3B-Instruct"
+        "Meta-Llama-Guard-3-8B"
     ]
 
     def __init__(self):
@@ -125,7 +129,7 @@ class SambaNovaLLMNode:
                 logger.error(chunk)
                 return chunk, 0
             generated_text += chunk
-            token_count += 1  # This is still an approximation
+            token_count += 1  
         return generated_text, token_count
 
     def handle_non_streaming_response(self, data, headers, endpoint, max_retries, request_type, conversation_id, prompt):

@@ -4,7 +4,6 @@ import time
 import logging
 from typing import Dict, Any, Generator, Tuple
 
-# Set up logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
@@ -38,7 +37,7 @@ def make_api_request(data: Dict[str, Any], headers: Dict[str, str], url: str, ma
             logger.error(f"Request failed on attempt {attempt + 1}: {str(e)}")
         
         if attempt < max_retries - 1:
-            time.sleep(2 ** attempt)  # Exponential backoff
+            time.sleep(2 ** attempt) 
     
     logger.error("Failed after all retries.")
     return "Failed after all retries.", False, "Failed after all retries"

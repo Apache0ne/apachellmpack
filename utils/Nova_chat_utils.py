@@ -7,7 +7,6 @@ import time
 import threading
 from typing import Dict, List, Optional, Any
 
-# Set up logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
@@ -119,7 +118,6 @@ class ChatHistoryManager:
 
     def get_token_count(self, conversation_id: str) -> int:
         history = self.get_history(conversation_id)
-        # This is a simple estimation. You might want to use a proper tokenizer for accurate count
         return sum(len(message['content'].split()) for message in history)
 
     def truncate_history(self, conversation_id: str, max_tokens: int) -> None:

@@ -1,0 +1,860 @@
+{
+  "last_node_id": 122,
+  "last_link_id": 103,
+  "nodes": [
+    {
+      "id": 111,
+      "type": "ShowText|pysssss",
+      "pos": [
+        2604.879150390625,
+        310.5524597167969
+      ],
+      "size": [
+        447.98272705078125,
+        381.4410095214844
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 94,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        ""
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 112,
+      "type": "Show any to JSON [Crystools]",
+      "pos": [
+        2613.5810546875,
+        181.49154663085938
+      ],
+      "size": [
+        425.3504333496094,
+        91.36438751220703
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "any_value",
+          "type": "*",
+          "link": 95,
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "string",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Show any to JSON [Crystools]"
+      },
+      "widgets_values": [],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 113,
+      "type": "ShowText|pysssss",
+      "pos": [
+        2084.78759765625,
+        744.21337890625
+      ],
+      "size": [
+        315,
+        58
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 96,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        ""
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 114,
+      "type": "Fast Groups Muter (rgthree)",
+      "pos": [
+        3557.298095703125,
+        -126.24779510498047
+      ],
+      "size": [
+        226.8000030517578,
+        106
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "OPT_CONNECTION",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "properties": {
+        "matchColors": "",
+        "matchTitle": "",
+        "showNav": true,
+        "sort": "position",
+        "customSortAlphabet": "",
+        "toggleRestriction": "default"
+      }
+    },
+    {
+      "id": 115,
+      "type": "ShowText|pysssss",
+      "pos": [
+        4359.365234375,
+        646.7589721679688
+      ],
+      "size": [
+        315,
+        58
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 97,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 116,
+      "type": "ShowText|pysssss",
+      "pos": [
+        4780.85302734375,
+        433.3704528808594
+      ],
+      "size": [
+        687.9000244140625,
+        290.6499938964844
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 98,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 117,
+      "type": "ShowText|pysssss",
+      "pos": [
+        4771.890625,
+        98.382568359375
+      ],
+      "size": [
+        707.7000122070312,
+        285.70001220703125
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 99,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 118,
+      "type": "ShowText|pysssss",
+      "pos": [
+        3107.123779296875,
+        731.0122680664062
+      ],
+      "size": [
+        315,
+        58
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 100,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 104,
+      "type": "GroqAPILLM",
+      "pos": [
+        3085.54150390625,
+        209.73495483398438
+      ],
+      "size": [
+        400,
+        470
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "api_response",
+          "type": "STRING",
+          "links": [
+            102
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "success",
+          "type": "BOOLEAN",
+          "links": null,
+          "slot_index": 1
+        },
+        {
+          "name": "status_code",
+          "type": "STRING",
+          "links": [
+            101
+          ],
+          "slot_index": 2
+        },
+        {
+          "name": "conversation_id",
+          "type": "STRING",
+          "links": [
+            100
+          ],
+          "slot_index": 3
+        },
+        {
+          "name": "chat_history",
+          "type": "STRING",
+          "links": [
+            103
+          ],
+          "slot_index": 4
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "GroqAPILLM"
+      },
+      "widgets_values": [
+        "llama-3.1-8b-instant",
+        "List 10 ideas about [user_input]",
+        "you are a space man but only talks in radio lingo",
+        "what is the moon",
+        0.85,
+        5000,
+        1,
+        2085381822,
+        "randomize",
+        2,
+        "",
+        true,
+        ""
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 119,
+      "type": "ShowText|pysssss",
+      "pos": [
+        3299.982666015625,
+        80.4449462890625
+      ],
+      "size": [
+        315,
+        58
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 101,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 120,
+      "type": "ShowText|pysssss",
+      "pos": [
+        3509.34130859375,
+        220.18344116210938
+      ],
+      "size": [
+        772.5,
+        302.5
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 102,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 121,
+      "type": "ShowText|pysssss",
+      "pos": [
+        3499.480712890625,
+        600.9549560546875
+      ],
+      "size": [
+        769.5,
+        310
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 103,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 87,
+      "type": "SambaNovaLLMNode",
+      "pos": [
+        2195.4052734375,
+        296
+      ],
+      "size": [
+        400,
+        406
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "generated_text",
+          "type": "STRING",
+          "links": [
+            94
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "token_count",
+          "type": "INT",
+          "links": [
+            95
+          ],
+          "slot_index": 1
+        },
+        {
+          "name": "conversation_id",
+          "type": "STRING",
+          "links": [
+            96
+          ],
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SambaNovaLLMNode"
+      },
+      "widgets_values": [
+        "hello im hannah",
+        "Meta-Llama-3.3-70B-Instruct",
+        1024,
+        0.85,
+        1,
+        1,
+        "chat",
+        "your a guy named mike funny",
+        "",
+        "",
+        1,
+        false
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 89,
+      "type": "Note",
+      "pos": [
+        2608.51123046875,
+        80.22501373291016
+      ],
+      "size": [
+        427.88018798828125,
+        64.82952117919922
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "Token count of the convo, this will give you a good idea when when token cap is near limit"
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 88,
+      "type": "Note",
+      "pos": [
+        2411.4052734375,
+        743
+      ],
+      "size": [
+        250.63558959960938,
+        116.93695831298828
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "Convo_ID is how the context is used, copy and paste this ID after the first prompt to go on with the same context.\nContext will be saved in the Nova.json file"
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 90,
+      "type": "Note",
+      "pos": [
+        1913.405029296875,
+        376
+      ],
+      "size": [
+        269.6723937988281,
+        295.73260498046875
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "The request_type-\nChat-normal LLM Chat \nCompetion- Mock chat based on prompt\n\nThe stop_sequemces is a more complex rule set for the models to follow. Ask The LLM and it should explain\n\nMax tokens- set to 1500 as good practice I would not go over 2k tokens. \n\nStreaming mode does not work in comfy"
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 105,
+      "type": "cerebrasLLMNODE",
+      "pos": [
+        4345.81201171875,
+        176.92405700683594
+      ],
+      "size": [
+        400,
+        426
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "api_response",
+          "type": "STRING",
+          "links": [
+            99
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "success",
+          "type": "BOOLEAN",
+          "links": null,
+          "slot_index": 1
+        },
+        {
+          "name": "conversation_id",
+          "type": "STRING",
+          "links": [
+            97
+          ],
+          "slot_index": 2
+        },
+        {
+          "name": "chat_history",
+          "type": "STRING",
+          "links": [
+            98
+          ],
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "cerebrasLLMNODE"
+      },
+      "widgets_values": [
+        "llama-3.3-70b",
+        "Use [system_message] and [user_input]",
+        "the song",
+        "does scotty know?",
+        0.85,
+        1024,
+        1,
+        1010378686,
+        "randomize",
+        "",
+        false,
+        ""
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 122,
+      "type": "Note",
+      "pos": [
+        4346.48828125,
+        83.06983947753906
+      ],
+      "size": [
+        363.6163635253906,
+        58
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "other or custom presets are broken for cerebras right now"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    }
+  ],
+  "links": [
+    [
+      94,
+      87,
+      0,
+      111,
+      0,
+      "STRING"
+    ],
+    [
+      95,
+      87,
+      1,
+      112,
+      0,
+      "*"
+    ],
+    [
+      96,
+      87,
+      2,
+      113,
+      0,
+      "STRING"
+    ],
+    [
+      97,
+      105,
+      2,
+      115,
+      0,
+      "STRING"
+    ],
+    [
+      98,
+      105,
+      3,
+      116,
+      0,
+      "STRING"
+    ],
+    [
+      99,
+      105,
+      0,
+      117,
+      0,
+      "STRING"
+    ],
+    [
+      100,
+      104,
+      3,
+      118,
+      0,
+      "STRING"
+    ],
+    [
+      101,
+      104,
+      2,
+      119,
+      0,
+      "STRING"
+    ],
+    [
+      102,
+      104,
+      0,
+      120,
+      0,
+      "STRING"
+    ],
+    [
+      103,
+      104,
+      4,
+      121,
+      0,
+      "STRING"
+    ]
+  ],
+  "groups": [
+    {
+      "id": 1,
+      "title": "Nova",
+      "bounding": [
+        1903.405029296875,
+        6.625013828277588,
+        1159.45654296875,
+        863.3119506835938
+      ],
+      "color": "#ff5900",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 2,
+      "title": "Groq",
+      "bounding": [
+        3075.54150390625,
+        6.844993591308594,
+        1246.66650390625,
+        933.489501953125
+      ],
+      "color": "#8AA",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 3,
+      "title": "Cerebras",
+      "bounding": [
+        4335.81201171875,
+        9.469850540161133,
+        1153.77880859375,
+        724.550537109375
+      ],
+      "color": "#88A",
+      "font_size": 24,
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.6830134553650705,
+      "offset": [
+        -1841.6588782177278,
+        350.66061769826376
+      ]
+    },
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0
+  },
+  "version": 0.4
+}

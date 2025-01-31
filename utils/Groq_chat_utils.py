@@ -5,7 +5,6 @@ import logging
 from collections import OrderedDict
 import time
 
-# Set up logging
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
 
@@ -50,10 +49,10 @@ class ChatHistoryManager:
                         return OrderedDict()
             except json.JSONDecodeError as e:
                 logger.error(f"Error decoding JSON (attempt {attempt+1}/{max_retries}): {e}")
-                time.sleep(0.1)  # Short delay before retry
+                time.sleep(0.1)  
             except Exception as e:
                 logger.error(f"Unexpected error loading history (attempt {attempt+1}/{max_retries}): {e}")
-                time.sleep(0.1)  # Short delay before retry
+                time.sleep(0.1)  
         logger.error("Failed to load history after multiple attempts")
         return OrderedDict()
 
@@ -67,7 +66,7 @@ class ChatHistoryManager:
                 return
             except Exception as e:
                 logger.error(f"Error saving history (attempt {attempt+1}/{max_retries}): {e}")
-                time.sleep(0.1)  # Short delay before retry
+                time.sleep(0.1) 
         logger.error("Failed to save history after multiple attempts")
 
     def create_new_conversation(self):
